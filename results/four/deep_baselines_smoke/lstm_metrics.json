@@ -1,0 +1,54 @@
+{
+  "model": "lstm",
+  "validation_rows": 750,
+  "accuracy": 0.44266666666666665,
+  "macro_f1": 0.38321355746938784,
+  "weighted_f1": 0.41283926420123296,
+  "training_seconds": 1.46,
+  "device": "cuda",
+  "labels": [
+    "Irrelevant",
+    "Negative",
+    "Neutral",
+    "Positive"
+  ],
+  "classification_report": {
+    "0": {
+      "precision": 0.47058823529411764,
+      "recall": 0.06060606060606061,
+      "f1-score": 0.10738255033557047,
+      "support": 132.0
+    },
+    "1": {
+      "precision": 0.4602649006622517,
+      "recall": 0.6017316017316018,
+      "f1-score": 0.5215759849906192,
+      "support": 231.0
+    },
+    "2": {
+      "precision": 0.4550561797752809,
+      "recall": 0.4426229508196721,
+      "f1-score": 0.4487534626038781,
+      "support": 183.0
+    },
+    "3": {
+      "precision": 0.41106719367588934,
+      "recall": 0.5098039215686274,
+      "f1-score": 0.4551422319474836,
+      "support": 204.0
+    },
+    "accuracy": 0.44266666666666665,
+    "macro avg": {
+      "precision": 0.4492441273518849,
+      "recall": 0.4036911336814905,
+      "f1-score": 0.38321355746938784,
+      "support": 750.0
+    },
+    "weighted avg": {
+      "precision": 0.44742910336074865,
+      "recall": 0.44266666666666665,
+      "f1-score": 0.41283926420123296,
+      "support": 750.0
+    }
+  }
+}

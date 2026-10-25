@@ -1,0 +1,4 @@
+model,best_epoch,train_rows,validation_rows,test_rows,validation_macro_f1,test_accuracy,test_macro_f1,test_weighted_f1,training_seconds,device,labels,label_to_id
+lstm,1,5000,9894,1000,0.41524441142523305,0.49,0.43709210424042,0.46563727626679097,2.38,cuda,"['Irrelevant', 'Negative', 'Neutral', 'Positive']","{'Irrelevant': 0, 'Negative': 1, 'Neutral': 2, 'Positive': 3}"
+cnn,1,5000,9894,1000,0.4120726694995739,0.498,0.4457671655609383,0.47085432971469554,1.7,cuda,"['Irrelevant', 'Negative', 'Neutral', 'Positive']","{'Irrelevant': 0, 'Negative': 1, 'Neutral': 2, 'Positive': 3}"
+attention,1,5000,9894,1000,0.400988234005393,0.485,0.4126620288155084,0.4482231564950996,1.64,cuda,"['Irrelevant', 'Negative', 'Neutral', 'Positive']","{'Irrelevant': 0, 'Negative': 1, 'Neutral': 2, 'Positive': 3}"

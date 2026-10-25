@@ -1,0 +1,16 @@
+{
+  "threshold_cosine": 0.9,
+  "model_used": "linear_svm",
+  "test": {
+    "n": 1000,
+    "frac_near_duplicate_of_train": 0.399,
+    "accuracy_on_near_duplicates": 0.9924812030075187,
+    "accuracy_on_novel": 0.9717138103161398,
+    "median_max_similarity": 0.8768103890277417
+  },
+  "val_sample": {
+    "n": 2000,
+    "frac_near_duplicate_of_train": 0.154,
+    "median_max_similarity": 0.785431247331757
+  }
+}

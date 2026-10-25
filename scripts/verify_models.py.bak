@@ -1,0 +1,232 @@
+#!/usr/bin/env python
+"""Re-evaluate every SAVED model without retraining and build one consistent leaderboard.
+
+For each saved model (classical pipelines + DistilBERT if present) this script:
+  1. reloads the artifact from disk and recomputes predictions on the internal validation split
+     (15% of the official training file) and on the held-out test set (official validation file);
+  2. checks label alignment (model class order == label_map.json, confusion-matrix order == label order);
+  3. checks that the recomputed metrics equal the metrics stored when the model was trained
+     (=> the saved weights really are the ones that produced the reported scores);
+  4. measures inference time (same code path for all models, hardware recorded), model size on disk,
+     and a bootstrap 95% CI for test macro-F1 (the test set has only ~1,000 rows);
+  5. quantifies near-duplicate overlap: accuracy of every model on test tweets grouped by their maximum
+     TF-IDF cosine similarity to any TRAINING tweet. This uses no test labels for selection.
+
+Selection criterion is validation macro-F1 only; test columns are reported, never used to select.
+
+Usage:  python scripts/verify_models.py [--label-mode four] [--skip-transformer] [--bootstrap 1000]
+Outputs (results/<mode>/metrics/): leaderboard.csv, leaderboard.md, per_class_metrics.csv,
+         near_duplicate_by_model.csv, verification.json
+"""
+import argparse
+import json
+import sys
+import time
+from pathlib import Path
+
+import joblib
+import numpy as np
+import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from sklearn.feature_extraction.text import TfidfVectorizer  # noqa: E402
+
+from src.classical import _max_cos  # noqa: E402
+from src.config import SEED, get_paths  # noqa: E402
+from src.data import load_splits  # noqa: E402
+from src.evaluation import evaluate, save_json  # noqa: E402
+from src.preprocessing import normalize_minimal  # noqa: E402
+
+TOL = 1e-6
+
+
+def dir_size_mb(p: Path) -> float:
+    files = [p] if p.is_file() else [f for f in p.rglob("*") if f.is_file()]
+    return round(sum(f.stat().st_size for f in files) / 1e6, 2)
+
+
+def bootstrap_macro_f1(y, pred, labels, n=1000):
+    from sklearn.metrics import f1_score
+    rng = np.random.RandomState(SEED); y = np.asarray(y); pred = np.asarray(pred); vals = []
+    for _ in range(n):
+        i = rng.randint(0, len(y), len(y))
+        vals.append(f1_score(y[i], pred[i], labels=labels, average="macro", zero_division=0))
+    return float(np.percentile(vals, 2.5)), float(np.percentile(vals, 97.5))
+
+
+def predict_classical(pipe, texts):
+    t0 = time.perf_counter(); pred = pipe.predict(list(texts)); return np.asarray(pred), time.perf_counter() - t0
+
+
+def load_bert(model_dir: Path):
+    import torch
+    from transformers import AutoModelForSequenceClassification, AutoTokenizer
+    dev = "cuda" if torch.cuda.is_available() else "cpu"
+    tok = AutoTokenizer.from_pretrained(str(model_dir))
+    model = AutoModelForSequenceClassification.from_pretrained(str(model_dir)).to(dev).eval()
+    return model, tok, dev
+
+
+def predict_bert(bundle, texts, labels, max_len=64, batch=64):
+    import torch
+    model, tok, dev = bundle
+    texts = [normalize_minimal(t) for t in texts]; out = []
+    if dev == "cuda":
+        torch.cuda.synchronize()
+    t0 = time.perf_counter()
+    with torch.no_grad():
+        for i in range(0, len(texts), batch):
+            enc = tok(texts[i:i + batch], truncation=True, max_length=max_len, padding=True, return_tensors="pt").to(dev)
+            out.append(model(**enc).logits.argmax(-1).cpu().numpy())
+    if dev == "cuda":
+        torch.cuda.synchronize()
+    dt = time.perf_counter() - t0
+    return np.array([labels[i] for i in np.concatenate(out)]), dt
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--label-mode", default="four")
+    ap.add_argument("--skip-transformer", action="store_true")
+    ap.add_argument("--bootstrap", type=int, default=1000)
+    a = ap.parse_args()
+    paths = get_paths(a.label_mode)
+    # Fail with an actionable message when a source-only archive was supplied.
+    # Do not create or infer model artifacts from historical metrics.
+    label_map_path = paths.models / "label_map.json"
+    classical_dir = paths.models / "classical"
+    has_classical = classical_dir.exists() and any(classical_dir.glob("*.joblib"))
+    has_transformer = (paths.models / "distilbert" / "config.json").exists()
+    if not label_map_path.exists() or (not has_classical and (a.skip_transformer or not has_transformer)):
+        raise FileNotFoundError(
+            f"Saved model artifacts are missing under {paths.models}. "
+            "This archive contains historical metrics but not the trained model binaries. "
+            "Restore models/<label_mode>/label_map.json and the relevant classical/ and/or "
+            "distilbert/ artifacts before running verification. No metrics were modified."
+        )
+    labels = json.loads(label_map_path.read_text())["labels"]
+    sp = load_splits(paths)
+    yva, yte = sp["val"].label.values, sp["test"].label.values
+    stored_cmp = pd.read_csv(paths.metrics / "model_comparison.csv").set_index("model") \
+        if (paths.metrics / "model_comparison.csv").exists() else pd.DataFrame()
+    unknown = (set(yva) | set(yte)) - set(labels)
+    assert not unknown, f"labels in data not in label_map: {unknown}"
+
+    results, notes = {}, {}     # name -> dict(pred_val, pred_te, infer_s, family, size, device, ...)
+
+    # ------------------------------------------------------------------ classical
+    for f in sorted((paths.models / "classical").glob("*.joblib")):
+        name = f.stem; pipe = joblib.load(f); clf = pipe.steps[-1][1]
+        notes[name] = {"classes_match_label_map": sorted(map(str, clf.classes_)) == sorted(labels)}
+        pv, _ = predict_classical(pipe, sp["val"].text)
+        pt, dt = predict_classical(pipe, sp["test"].text)
+        results[name] = dict(family="classical", pred_val=pv, pred_te=pt, infer_s=dt, size=dir_size_mb(f), device="cpu")
+
+    # ------------------------------------------------------------------ transformer
+    bdir = paths.models / "distilbert"
+    if not a.skip_transformer and (bdir / "config.json").exists():
+        try:
+            bundle = load_bert(bdir)
+            cfg_labels = [bundle[0].config.id2label[i] for i in range(len(labels))]
+            saved = json.loads((bdir / "label_map.json").read_text())["labels"] if (bdir / "label_map.json").exists() else None
+            envj = json.loads((paths.metrics / "transformer_distilbert.json").read_text()) \
+                if (paths.metrics / "transformer_distilbert.json").exists() else {}
+            max_len = int(envj.get("environment", {}).get("max_len", 64))
+            predict_bert(bundle, list(sp["test"].text[:64]), labels, max_len)          # warm-up (CUDA init)
+            pv, _ = predict_bert(bundle, sp["val"].text, labels, max_len)
+            pt, dt = predict_bert(bundle, sp["test"].text, labels, max_len)
+            results["distilbert"] = dict(family="transformer", pred_val=pv, pred_te=pt, infer_s=dt, size=dir_size_mb(bdir),
+                                         device=bundle[2] + (":" + __import__("torch").cuda.get_device_name(0) if bundle[2] == "cuda" else ""))
+            notes["distilbert"] = {"config_id2label_matches_label_map": cfg_labels == labels,
+                                   "saved_label_map_matches": saved == labels, "max_len": max_len}
+            log = paths.metrics / "transformer_training_log.csv"
+            if log.exists():
+                h = pd.read_csv(log).dropna(subset=["eval_macro_f1"])
+                if len(h):
+                    best = h.loc[h["eval_macro_f1"].idxmax()]
+                    notes["distilbert"].update(best_epoch_by_logged_val_macro_f1=float(best["epoch"]),
+                                               logged_best_val_macro_f1=float(best["eval_macro_f1"]),
+                                               logged_epochs=h["eval_macro_f1"].round(4).tolist())
+        except ImportError as e:
+            print(f"[skip] DistilBERT: {e}")
+        except Exception as e:  # noqa
+            print(f"[warn] DistilBERT could not be verified: {type(e).__name__}: {e}")
+            notes["distilbert"] = {"error": f"{type(e).__name__}: {e}"}
+    if not results:
+        sys.exit("No saved models found - run the classical/transformer stages first.")
+
+    # ------------------------------------------------------------------ near-duplicate bins (vs TRAIN only)
+    tr_txt = sp["train"].text.str.lower().tolist()
+    vec = TfidfVectorizer(ngram_range=(1, 2), min_df=2, max_df=0.2, sublinear_tf=True).fit(tr_txt)
+    R = vec.transform(tr_txt)
+    sim = _max_cos(vec.transform(sp["test"].text.str.lower().tolist()), R)
+    bins = [(0, .5, "<0.5 (novel)"), (.5, .7, "0.5-0.7"), (.7, .9, "0.7-0.9"), (.9, 1.0001, ">=0.9 (near-duplicate)")]
+
+    rows, pc_rows, nd_rows, verification = [], [], [], {}
+    for name, r in results.items():
+        mv, mt = evaluate(yva, r["pred_val"], labels), evaluate(yte, r["pred_te"], labels)
+        lo, hi = bootstrap_macro_f1(yte, r["pred_te"], labels, a.bootstrap)
+        # compare with metrics stored at training time
+        stored = {}
+        for cand in (paths.metrics / f"classical_{name}.json", paths.metrics / f"transformer_{name}.json"):
+            if cand.exists():
+                stored = json.loads(cand.read_text())
+        chk = {}
+        if stored:
+            chk["test_accuracy_match"] = abs(stored["accuracy"] - mt["accuracy"]) < TOL
+            chk["test_macro_f1_match"] = abs(stored["macro_f1"] - mt["macro_f1"]) < TOL
+            chk["test_confusion_matrix_match"] = stored["confusion_matrix"] == mt["confusion_matrix"]
+            chk["stored_label_order_match"] = stored.get("labels") == labels
+            if "val_macro_f1" in stored:
+                chk["val_macro_f1_match"] = abs(stored["val_macro_f1"] - mv["macro_f1"]) < TOL
+        else:
+            chk["stored_metrics_found"] = False
+        chk.update(notes.get(name, {}))
+        verification[name] = chk
+        for split, m in (("val", mv), ("test", mt)):
+            for c in labels:
+                pc_rows.append({"model": name, "split": split, "class": c, **m["per_class"][c]})
+        ok = np.asarray(r["pred_te"]) == yte
+        for lo_b, hi_b, lab in bins:
+            sel = (sim >= lo_b) & (sim < hi_b)
+            nd_rows.append({"model": name, "similarity_bin": lab, "n_test": int(sel.sum()),
+                            "accuracy": float(ok[sel].mean()) if sel.any() else None})
+        rows.append({
+            "model": name, "family": r["family"], "device_for_inference": r["device"],
+            "val_accuracy": mv["accuracy"], "val_macro_f1": mv["macro_f1"], "val_weighted_f1": mv["weighted_f1"],
+            "test_accuracy": mt["accuracy"], "test_macro_f1": mt["macro_f1"], "test_weighted_f1": mt["weighted_f1"],
+            "test_macro_f1_ci95_low": lo, "test_macro_f1_ci95_high": hi,
+            "train_seconds": stored_cmp["train_seconds"].get(name) if len(stored_cmp) else None,
+            "inference_ms_per_1k_tweets": round(r["infer_s"] / len(yte) * 1e6, 1), "model_size_mb": r["size"],
+            "all_checks_passed": all(v for v in chk.values() if isinstance(v, bool)),
+        })
+    lb = pd.DataFrame(rows).sort_values("val_macro_f1", ascending=False).reset_index(drop=True)
+    lb["selected_by_val_macro_f1"] = False
+    lb.loc[0, "selected_by_val_macro_f1"] = True
+
+    lb.to_csv(paths.metrics / "leaderboard.csv", index=False)
+    pd.DataFrame(pc_rows).to_csv(paths.metrics / "per_class_metrics.csv", index=False)
+    nd = pd.DataFrame(nd_rows); nd.to_csv(paths.metrics / "near_duplicate_by_model.csv", index=False)
+    frac = {lab: float(((sim >= lo_b) & (sim < hi_b)).mean()) for lo_b, hi_b, lab in bins}
+    save_json({"labels": labels, "test_similarity_bin_share": frac, "checks": verification,
+               "split_definitions": {"val": "internal 15% stratified split of the official training file (used for selection)",
+                                     "test": "official validation file (held out, never used for selection)"}},
+              paths.metrics / "verification.json")
+    legend = ("val_* = internal validation split (selection); test_* = official validation file (held out); "
+              "inference time measured here on the listed device (CPU vs GPU values are not comparable); "
+              "CI = bootstrap 95% over test tweets.\n\n")
+    (paths.metrics / "leaderboard.md").write_text(legend + lb.round(4).to_markdown(index=False))
+
+    pd.set_option("display.width", 250); pd.set_option("display.max_columns", 30)
+    print("\nLEADERBOARD\n", lb.round(4).to_string(index=False))
+    print("\nTEST ACCURACY BY SIMILARITY TO TRAINING SET (share of test tweets in bin:", {k: round(v, 3) for k, v in frac.items()}, ")")
+    print(nd.pivot(index="model", columns="similarity_bin", values="accuracy").round(4).to_string())
+    print("\nVERIFICATION")
+    for k, v in verification.items():
+        print(" ", k, json.dumps(v))
+    bad = [k for k, v in verification.items() if not all(x for x in v.values() if isinstance(x, bool))]
+    print("\nRESULT:", "ALL CHECKS PASSED" if not bad else f"CHECK FAILURES in: {bad}")
+
+
+if __name__ == "__main__":
+    main()

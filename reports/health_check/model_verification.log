@@ -1,0 +1,29 @@
+
+Loading weights:   0%|          | 0/104 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 104/104 [00:00<00:00, 7979.94it/s]
+
+LEADERBOARD
+         model      family         device_for_inference  val_accuracy  val_macro_f1  val_weighted_f1  test_accuracy  test_macro_f1  test_weighted_f1  test_macro_f1_ci95_low  test_macro_f1_ci95_high  train_seconds  inference_ms_per_1k_tweets  model_size_mb  all_checks_passed  selected_by_val_macro_f1
+   linear_svm   classical                          cpu        0.9531        0.9521           0.9531          0.980         0.9795            0.9800                  0.9722                   0.9884            1.6                       156.2           6.21               True                      True
+       logreg   classical                          cpu        0.9437        0.9429           0.9437          0.981         0.9800            0.9810                  0.9716                   0.9881           31.1                       150.7           6.44               True                     False
+  naive_bayes   classical                          cpu        0.9423        0.9411           0.9422          0.966         0.9651            0.9660                  0.9557                   0.9757            0.1                       156.7           8.82               True                     False
+random_forest   classical                          cpu        0.9120        0.9103           0.9117          0.947         0.9462            0.9470                  0.9304                   0.9586           62.5                       229.8         195.05               True                     False
+   distilbert transformer cuda:NVIDIA GeForce GTX 1650        0.8938        0.8910           0.8937          0.933         0.9318            0.9331                  0.9150                   0.9460         7632.1                     13628.3         268.56               True                     False
+
+TEST ACCURACY BY SIMILARITY TO TRAINING SET (share of test tweets in bin: {'<0.5 (novel)': 0.037, '0.5-0.7': 0.055, '0.7-0.9': 0.506, '>=0.9 (near-duplicate)': 0.402} )
+similarity_bin  0.5-0.7  0.7-0.9  <0.5 (novel)  >=0.9 (near-duplicate)
+model                                                                 
+distilbert       0.8545   0.9506        0.5946                  0.9527
+linear_svm       0.9455   0.9941        0.7027                  0.9925
+logreg           0.9636   0.9862        0.7568                  0.9975
+naive_bayes      0.9273   0.9802        0.6216                  0.9851
+random_forest    0.7818   0.9625        0.7297                  0.9701
+
+VERIFICATION
+  linear_svm {"test_accuracy_match": true, "test_macro_f1_match": true, "test_confusion_matrix_match": true, "stored_label_order_match": true, "val_macro_f1_match": true, "classes_match_label_map": true}
+  logreg {"test_accuracy_match": true, "test_macro_f1_match": true, "test_confusion_matrix_match": true, "stored_label_order_match": true, "val_macro_f1_match": true, "classes_match_label_map": true}
+  naive_bayes {"test_accuracy_match": true, "test_macro_f1_match": true, "test_confusion_matrix_match": true, "stored_label_order_match": true, "val_macro_f1_match": true, "classes_match_label_map": true}
+  random_forest {"test_accuracy_match": true, "test_macro_f1_match": true, "test_confusion_matrix_match": true, "stored_label_order_match": true, "val_macro_f1_match": true, "classes_match_label_map": true}
+  distilbert {"test_accuracy_match": true, "test_macro_f1_match": true, "test_confusion_matrix_match": true, "stored_label_order_match": true, "val_macro_f1_match": true, "config_id2label_matches_label_map": true, "saved_label_map_matches": true, "max_len": 64, "best_epoch_by_logged_val_macro_f1": 3.0, "logged_best_val_macro_f1": 0.8909639825601584, "logged_epochs": [0.7743, 0.866, 0.891]}
+
+RESULT: ALL CHECKS PASSED

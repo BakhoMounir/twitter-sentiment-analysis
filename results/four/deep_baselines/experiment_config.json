@@ -1,0 +1,23 @@
+{
+  "train_file": "results/four/splits/train.csv",
+  "validation_file": "results/four/splits/val.csv",
+  "test_file": "results/four/splits/test.csv",
+  "epochs": 5,
+  "max_vocab": 20000,
+  "max_length": 96,
+  "batch_size": 32,
+  "seed": 42,
+  "labels": [
+    "Irrelevant",
+    "Negative",
+    "Neutral",
+    "Positive"
+  ],
+  "label_to_id": {
+    "Irrelevant": 0,
+    "Negative": 1,
+    "Neutral": 2,
+    "Positive": 3
+  },
+  "test_used_for_selection": false
+}

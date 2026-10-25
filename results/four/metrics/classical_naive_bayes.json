@@ -1,0 +1,71 @@
+{
+  "accuracy": 0.966,
+  "macro_f1": 0.9650662194798025,
+  "weighted_f1": 0.966037470635705,
+  "per_class": {
+    "Negative": {
+      "precision": 0.9662921348314607,
+      "recall": 0.9699248120300752,
+      "f1": 0.9681050656660413,
+      "support": 266
+    },
+    "Neutral": {
+      "precision": 0.985663082437276,
+      "recall": 0.9649122807017544,
+      "f1": 0.975177304964539,
+      "support": 285
+    },
+    "Positive": {
+      "precision": 0.950530035335689,
+      "recall": 0.9711191335740073,
+      "f1": 0.9607142857142857,
+      "support": 277
+    },
+    "Irrelevant": {
+      "precision": 0.9590643274853801,
+      "recall": 0.9534883720930233,
+      "f1": 0.956268221574344,
+      "support": 172
+    }
+  },
+  "confusion_matrix": [
+    [
+      258,
+      1,
+      5,
+      2
+    ],
+    [
+      2,
+      275,
+      5,
+      3
+    ],
+    [
+      4,
+      2,
+      269,
+      2
+    ],
+    [
+      3,
+      1,
+      4,
+      164
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n    Negative     0.9663    0.9699    0.9681       266\n     Neutral     0.9857    0.9649    0.9752       285\n    Positive     0.9505    0.9711    0.9607       277\n  Irrelevant     0.9591    0.9535    0.9563       172\n\n    accuracy                         0.9660      1000\n   macro avg     0.9654    0.9649    0.9651      1000\nweighted avg     0.9662    0.9660    0.9660      1000\n",
+  "labels": [
+    "Negative",
+    "Neutral",
+    "Positive",
+    "Irrelevant"
+  ],
+  "model": "naive_bayes",
+  "params": {
+    "alpha": 0.1
+  },
+  "val_macro_f1": 0.941058797888466,
+  "fit_seconds": 0.145552396774292,
+  "inference_ms_per_1k": 154.71172332763672
+}

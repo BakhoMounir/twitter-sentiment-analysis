@@ -1,0 +1,87 @@
+{
+  "label_mode": "four",
+  "seed": 42,
+  "training_file": {
+    "file": "twitter_training.csv",
+    "header_detected": false,
+    "fields_per_row": {
+      "4": 74682
+    },
+    "rows_read": 74682,
+    "missing_or_empty_text": 858,
+    "unmapped_label_rows": 0,
+    "unmapped_labels": {},
+    "exact_duplicate_rows": 4057,
+    "duplicate_texts": 6987,
+    "n_entities": 32,
+    "label_counts": {
+      "Negative": 22542,
+      "Positive": 20832,
+      "Neutral": 18318,
+      "Irrelevant": 12990
+    }
+  },
+  "validation_file": {
+    "file": "twitter_validation.csv",
+    "header_detected": false,
+    "fields_per_row": {
+      "4": 1000
+    },
+    "rows_read": 1000,
+    "missing_or_empty_text": 0,
+    "unmapped_label_rows": 0,
+    "unmapped_labels": {},
+    "exact_duplicate_rows": 0,
+    "duplicate_texts": 3,
+    "n_entities": 32,
+    "label_counts": {
+      "Neutral": 285,
+      "Positive": 277,
+      "Negative": 266,
+      "Irrelevant": 172
+    }
+  },
+  "cleaning": {
+    "train_rows_after_invalid_removal": 73824,
+    "train_rows_dropped_conflicting_labels": 2643,
+    "train_rows_dropped_duplicate_text": 4523,
+    "train_rows_dropped_overlap_with_official_validation": 704,
+    "test_duplicate_texts_kept": 3
+  },
+  "splits": {
+    "protocol": "official training file -> stratified 85/15 train/val (model selection); official validation file = held-out test (never used for selection)",
+    "labels": [
+      "Negative",
+      "Neutral",
+      "Positive",
+      "Irrelevant"
+    ],
+    "train": {
+      "rows": 56060,
+      "label_counts": {
+        "Negative": 17267,
+        "Neutral": 13702,
+        "Positive": 15224,
+        "Irrelevant": 9867
+      }
+    },
+    "val": {
+      "rows": 9894,
+      "label_counts": {
+        "Negative": 3047,
+        "Neutral": 2418,
+        "Positive": 2687,
+        "Irrelevant": 1742
+      }
+    },
+    "test": {
+      "rows": 1000,
+      "label_counts": {
+        "Negative": 266,
+        "Neutral": 285,
+        "Positive": 277,
+        "Irrelevant": 172
+      }
+    }
+  }
+}

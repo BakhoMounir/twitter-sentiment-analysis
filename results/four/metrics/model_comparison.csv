@@ -1,0 +1,6 @@
+model,family,params,n_features,val_macro_f1,test_accuracy,test_macro_f1,test_weighted_f1,train_seconds,inference_ms_per_1k,selected_by_val_macro_f1
+linear_svm,classical,"{'C': 1.0, 'class_weight': 'balanced'}",155256,0.9521433893547298,0.98,0.9794510536916718,0.980024259604666,1.6,155.3,True
+logreg,classical,"{'C': 10, 'class_weight': 'balanced'}",155256,0.942879298258096,0.981,0.980012455588534,0.9810126056800382,31.1,153.4,False
+naive_bayes,classical,{'alpha': 0.1},155256,0.941058797888466,0.966,0.9650662194798024,0.966037470635705,0.1,154.7,False
+random_forest,classical,{'n_estimators': 250},20000,0.9102503113116188,0.947,0.9461775093010698,0.947002200502092,62.5,238.2,False
+distilbert,transformer,"{""epochs"": 3, ""lr"": 2e-05, ""max_len"": 64}",,0.8909639825601584,0.933,0.9317751050801335,0.933072460751189,7632.1,13617.5,False

@@ -1,0 +1,17 @@
+family,params,val_macro_f1,fit_seconds
+logreg,"{'C': 1, 'class_weight': None}",0.885884029735156,22.1
+logreg,"{'C': 4, 'class_weight': None}",0.932188226671431,29.2
+logreg,"{'C': 10, 'class_weight': None}",0.9400209470435208,36.2
+logreg,"{'C': 1, 'class_weight': 'balanced'}",0.8904363833457757,22.7
+logreg,"{'C': 4, 'class_weight': 'balanced'}",0.932052314377783,29.5
+logreg,"{'C': 10, 'class_weight': 'balanced'}",0.942879298258096,31.1
+linear_svm,"{'C': 0.1, 'class_weight': None}",0.8701495223739768,0.7
+linear_svm,"{'C': 0.5, 'class_weight': None}",0.9426286903144148,1.0
+linear_svm,"{'C': 1.0, 'class_weight': None}",0.9514957106860226,1.5
+linear_svm,"{'C': 0.1, 'class_weight': 'balanced'}",0.8802730568532235,0.7
+linear_svm,"{'C': 0.5, 'class_weight': 'balanced'}",0.9444740747150092,1.1
+linear_svm,"{'C': 1.0, 'class_weight': 'balanced'}",0.9521433893547298,1.6
+naive_bayes,{'alpha': 0.1},0.941058797888466,0.1
+naive_bayes,{'alpha': 0.5},0.9303269664127369,0.1
+naive_bayes,{'alpha': 1.0},0.9145922479996894,0.1
+random_forest,"{'n_estimators': 250, 'max_features': 'sqrt', 'tfidf_max_features': 20000}",0.9102503113116187,62.5

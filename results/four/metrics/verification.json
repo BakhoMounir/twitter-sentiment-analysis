@@ -1,0 +1,69 @@
+{
+  "labels": [
+    "Negative",
+    "Neutral",
+    "Positive",
+    "Irrelevant"
+  ],
+  "test_similarity_bin_share": {
+    "<0.5 (novel)": 0.037,
+    "0.5-0.7": 0.055,
+    "0.7-0.9": 0.506,
+    ">=0.9 (near-duplicate)": 0.402
+  },
+  "checks": {
+    "linear_svm": {
+      "test_accuracy_match": true,
+      "test_macro_f1_match": true,
+      "test_confusion_matrix_match": true,
+      "stored_label_order_match": true,
+      "val_macro_f1_match": true,
+      "classes_match_label_map": true
+    },
+    "logreg": {
+      "test_accuracy_match": true,
+      "test_macro_f1_match": true,
+      "test_confusion_matrix_match": true,
+      "stored_label_order_match": true,
+      "val_macro_f1_match": true,
+      "classes_match_label_map": true
+    },
+    "naive_bayes": {
+      "test_accuracy_match": true,
+      "test_macro_f1_match": true,
+      "test_confusion_matrix_match": true,
+      "stored_label_order_match": true,
+      "val_macro_f1_match": true,
+      "classes_match_label_map": true
+    },
+    "random_forest": {
+      "test_accuracy_match": true,
+      "test_macro_f1_match": true,
+      "test_confusion_matrix_match": true,
+      "stored_label_order_match": true,
+      "val_macro_f1_match": true,
+      "classes_match_label_map": true
+    },
+    "distilbert": {
+      "test_accuracy_match": true,
+      "test_macro_f1_match": true,
+      "test_confusion_matrix_match": true,
+      "stored_label_order_match": true,
+      "val_macro_f1_match": true,
+      "config_id2label_matches_label_map": true,
+      "saved_label_map_matches": true,
+      "max_len": 64,
+      "best_epoch_by_logged_val_macro_f1": 3.0,
+      "logged_best_val_macro_f1": 0.8909639825601584,
+      "logged_epochs": [
+        0.7743,
+        0.866,
+        0.891
+      ]
+    }
+  },
+  "split_definitions": {
+    "val": "internal 15% stratified split of the official training file (used for selection)",
+    "test": "official validation file (held out, never used for selection)"
+  }
+}

@@ -1,0 +1,4 @@
+model,validation_rows,accuracy,macro_f1,weighted_f1,training_seconds,device,labels
+lstm,750,0.44266666666666665,0.38321355746938784,0.41283926420123296,1.46,cuda,"['Irrelevant', 'Negative', 'Neutral', 'Positive']"
+cnn,750,0.47333333333333333,0.4502673146102234,0.4669935551453747,1.22,cuda,"['Irrelevant', 'Negative', 'Neutral', 'Positive']"
+attention,750,0.44666666666666666,0.375558870041867,0.40723270764339364,0.84,cuda,"['Irrelevant', 'Negative', 'Neutral', 'Positive']"

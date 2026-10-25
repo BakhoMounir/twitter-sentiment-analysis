@@ -1,0 +1,1553 @@
+{
+  "label_mode": "four",
+  "fit_on": "train split only",
+  "methods": {
+    "lda": {
+      "k": 20,
+      "k_rule": "max mean UMass coherence over the grid (override: TSP_LDA_K)",
+      "umass_coherence_train": -3.9629364013671875,
+      "terms": [
+        [
+          "xbox",
+          "store",
+          "playstation",
+          "series",
+          "microsoft",
+          "news",
+          "app",
+          "years",
+          "code",
+          "banned"
+        ],
+        [
+          "player",
+          "nvidia",
+          "ban",
+          "battlefield",
+          "details",
+          "occurred",
+          "graphics",
+          "rtx",
+          "microsoft",
+          "cards"
+        ],
+        [
+          "shit",
+          "game",
+          "fuck",
+          "fucking",
+          "wait",
+          "damn",
+          "black",
+          "war",
+          "play",
+          "ass"
+        ],
+        [
+          "pubg",
+          "old",
+          "mobile",
+          "players",
+          "org",
+          "people",
+          "god",
+          "bad",
+          "event",
+          "level"
+        ],
+        [
+          "people",
+          "did",
+          "stupid",
+          "don",
+          "month",
+          "funny",
+          "die",
+          "way",
+          "controller",
+          "shows"
+        ],
+        [
+          "facebook",
+          "account",
+          "open",
+          "lol",
+          "csgo",
+          "page",
+          "link",
+          "verizon",
+          "instagram",
+          "city"
+        ],
+        [
+          "legends",
+          "league",
+          "apex",
+          "release",
+          "don",
+          "playing",
+          "ubisoft",
+          "people",
+          "game",
+          "talking"
+        ],
+        [
+          "thank",
+          "happy",
+          "looking",
+          "great",
+          "times",
+          "forward",
+          "birthday",
+          "hour",
+          "version",
+          "welcome"
+        ],
+        [
+          "johnson",
+          "baby",
+          "powder",
+          "stop",
+          "vaccine",
+          "covid",
+          "based",
+          "selling",
+          "talc",
+          "company"
+        ],
+        [
+          "google",
+          "work",
+          "crazy",
+          "doesn",
+          "does",
+          "tweet",
+          "says",
+          "social",
+          "enjoy",
+          "don"
+        ],
+        [
+          "nice",
+          "wow",
+          "nba",
+          "love",
+          "borderlands",
+          "great",
+          "stream",
+          "today",
+          "kill",
+          "time"
+        ],
+        [
+          "home",
+          "depot",
+          "people",
+          "money",
+          "epic",
+          "smh",
+          "customers",
+          "data",
+          "america",
+          "used"
+        ],
+        [
+          "twitch",
+          "live",
+          "come",
+          "time",
+          "stream",
+          "today",
+          "awesome",
+          "help",
+          "love",
+          "thanks"
+        ],
+        [
+          "game",
+          "fix",
+          "fifa",
+          "servers",
+          "team",
+          "play",
+          "rainbow",
+          "best",
+          "eamaddennfl",
+          "mode"
+        ],
+        [
+          "amazon",
+          "interesting",
+          "luck",
+          "great",
+          "pre",
+          "exciting",
+          "order",
+          "try",
+          "played",
+          "music"
+        ],
+        [
+          "dead",
+          "red",
+          "game",
+          "games",
+          "redemption",
+          "play",
+          "playing",
+          "fun",
+          "dota",
+          "overwatch"
+        ],
+        [
+          "world",
+          "wtf",
+          "warcraft",
+          "beautiful",
+          "buy",
+          "skin",
+          "place",
+          "perfect",
+          "movie",
+          "bitch"
+        ],
+        [
+          "creed",
+          "assassin",
+          "miss",
+          "excited",
+          "assassins",
+          "odyssey",
+          "game",
+          "omg",
+          "lmao",
+          "definitely"
+        ],
+        [
+          "verizon",
+          "service",
+          "microsoft",
+          "let",
+          "terrible",
+          "people",
+          "phone",
+          "don",
+          "morning",
+          "console"
+        ],
+        [
+          "rhandlerr",
+          "video",
+          "cool",
+          "win",
+          "watch",
+          "won",
+          "free",
+          "card",
+          "amazon",
+          "play"
+        ]
+      ],
+      "topics": [
+        {
+          "id": 0,
+          "terms": [
+            "xbox",
+            "store",
+            "playstation",
+            "series",
+            "microsoft",
+            "news",
+            "app",
+            "years",
+            "code",
+            "banned"
+          ],
+          "size": 3936,
+          "share": 0.0588,
+          "representative_tweets": [
+            "New stuff from lifehacker...Thursday's Best Deals: Blue Light Rx Glasses, PUBG Funko Pops, The World of Cyberpunk 2077 Deluxe, Craftsman Cordless Drill, 50 Ring Pops, Sunday Scaries CBD, and More ift.tt/2XeTXw6 Check It Out !",
+            "@RockstarGames the user prompt for deleting vehicles and each full garage should be replaced with relocation of currently stored vehicles. I want my once fully upgraded Vacca back I\u2019m very disappointed and will recommend taking a long break from GTA updates if my car never returned please\ud83e\udd15",
+            "@RockstarGames the user prompt for deleting vehicles in a full garage should be replaced with relocation of currently stored vehicles. I want my car fully upgraded Vacca back I\u2019m very disappointed and will be taking a long break from GTA five if my car isn\u2019t returned please\ud83e\udd15"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2785,
+            "Neutral": 0.3526,
+            "Positive": 0.2261,
+            "Irrelevant": 0.1428
+          }
+        },
+        {
+          "id": 1,
+          "terms": [
+            "player",
+            "nvidia",
+            "ban",
+            "battlefield",
+            "details",
+            "occurred",
+            "graphics",
+            "rtx",
+            "microsoft",
+            "cards"
+          ],
+          "size": 2511,
+          "share": 0.0375,
+          "representative_tweets": [
+            "NVIDIA Officially Apologizes - Underestimated demand for RTX 3080 FE cards Nvidia has now officially and openly apologized for the RTX 3080 FE graphics cards shortages. Demand for the recently released graphics cards was higher than previously estimated.\u2026 ift.tt/3mB1XlY",
+            "NVIDIA officially apologizes - Underestimated demand for RTX 3080 FE cards Nvidia has now officially and openly apologized for the bottlenecks of RTX 3080 FE graphics cards. Demand for the recently released graphics cards was higher than previously estimated.... ift.tt / 3mB1XlY",
+            "E2E Networks is pleased to bring you out a Test Drive program built for this NVIDIA Virtual GPU Technology. vGPU This technology enables users to actively work more both efficiently and productively. @nvidia @NVIDIAAI. Request a Test And Drive Program out here :. c bit. l ly / 2ZnF5MX https://t.co/AkW6rGPVS6 ]"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2007,
+            "Neutral": 0.3031,
+            "Positive": 0.2178,
+            "Irrelevant": 0.2784
+          }
+        },
+        {
+          "id": 2,
+          "terms": [
+            "shit",
+            "game",
+            "fuck",
+            "fucking",
+            "wait",
+            "damn",
+            "black",
+            "war",
+            "play",
+            "ass"
+          ],
+          "size": 7727,
+          "share": 0.1154,
+          "representative_tweets": [
+            "Seen some say: \"Dirt 5, an Xbox Series X game (Multiplat but ok) looks worse than Forza Motorsport 4 on the 360! Why?!\". . TLOU2, a game made on a 1.8 terraflop system, arguably looks better than Spider-Man Miles Morales. Why?. . Game design, exclusivity and budget MATTERS people. https://t.co/5x0QtMPKpB",
+            "Some say: \"Dirt 5, an Xbox Series X game (multiplat, but ok) looks worse than Forza Motorsport 4 on the 360! Why?!.\" TLOU2, a game made on a 1.8 terraflop system, looks better than Spider-Man Miles Morales. Why?... Game design, exclusivity and budget MATTER people. https: / / t.co / 5x0QtMPKpB",
+            "Black Ops Cold War cutscene leak:. . Afghanistan, 1989, a cave. . Man: But Sheik, if we use the devil\u2019s weapons, are we not devils ourselves?. . Osama bin Laden: Sometimes, to fight one evil, you must work with another evil. You are a good man, Abdul, who must do bad things."
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.3983,
+            "Neutral": 0.1425,
+            "Positive": 0.2999,
+            "Irrelevant": 0.1593
+          }
+        },
+        {
+          "id": 3,
+          "terms": [
+            "pubg",
+            "old",
+            "mobile",
+            "players",
+            "org",
+            "people",
+            "god",
+            "bad",
+            "event",
+            "level"
+          ],
+          "size": 2606,
+          "share": 0.0389,
+          "representative_tweets": [
+            "KUZ YU VENT PUO. LOCK PHART FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG FANG F",
+            "Mark Zuckerberg has been part of the problem for a long time. Along with Sheryl Sandberg who encouraged conspiracy theories about George Soros on Facebook. FB has never been a \"neutral\" platform. Consider: Zuckerberg stole the idea for FB and initially used it to ridicule women.",
+            "... The ring surface of the bell USES electroplating can process, so that the bell surface to hold maintain some luster, not rust. The inner ball is only made of high quality stainless steel to aid make hearing the jingle sound more clear and crisp!"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.3289,
+            "Neutral": 0.2302,
+            "Positive": 0.2183,
+            "Irrelevant": 0.2226
+          }
+        },
+        {
+          "id": 4,
+          "terms": [
+            "people",
+            "did",
+            "stupid",
+            "don",
+            "month",
+            "funny",
+            "die",
+            "way",
+            "controller",
+            "shows"
+          ],
+          "size": 2488,
+          "share": 0.0372,
+          "representative_tweets": [
+            "I am the PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE",
+            "LEAGUE'S FUCTION.LEAGUE'S PEOPLE-PEOPLE-PEOPLE-PEOPLE-PEOPLE-PEOPLE-PEOPLE-PEOPLE-PEOPLE-PEOPLE-PEOPLE-PEOPLE-PEOPLE-PEOPLE-PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE PEOPLE",
+            "Call Of Duty WWII Ranked Ctf insane comeback clutch vs KGVeozz, Oxiriz8 and Veoxyy  . youtu.be/Azr9f-LbSsg"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.3509,
+            "Neutral": 0.207,
+            "Positive": 0.1961,
+            "Irrelevant": 0.246
+          }
+        },
+        {
+          "id": 5,
+          "terms": [
+            "facebook",
+            "account",
+            "open",
+            "lol",
+            "csgo",
+            "page",
+            "link",
+            "verizon",
+            "instagram",
+            "city"
+          ],
+          "size": 2800,
+          "share": 0.0418,
+          "representative_tweets": [
+            "I am excited to announce a new guest artist for Saturday's concert: American soprano, Rachel Elesi!.. Saturday 16th at 15: 00 BST \"Kings & Queens\" - songs and arias from the classical music royal family... Youtube: youtube.com / watch? v = SaNPib.... Facebook: facebook.com / jezziii / videos... https: / / Fencco / tEdkWQMPYq",
+            "Excited to announce a new guest artist for Saturday\u2019s concert: American Soprano, Rachel Elezi! . . Saturday 16th 3pm London (BST) \u2018Kings & Queens\u2019 - songs and arias from classical music\u2019s royal family .   . . Youtube: youtube.com/watch?v=SaNPib\u2026. Facebook: facebook.com/jezziii/videos\u2026 https://t.co/tEdkWQMpYq",
+            "Excited to announce a new guest artist for Saturday's concert: American soprano Rachel Elezi!.. Saturday, 16: 15 London (BST) \"Kings & Queens\" - songs and arias from the royal family of classical music... Youtube: youtube.com / watch? v = SaNPib.... Facebook: facebook.com / jezziii / videos... https: / / t.co / tEdkWQMpYq"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.3021,
+            "Neutral": 0.2743,
+            "Positive": 0.1971,
+            "Irrelevant": 0.2264
+          }
+        },
+        {
+          "id": 6,
+          "terms": [
+            "legends",
+            "league",
+            "apex",
+            "release",
+            "don",
+            "playing",
+            "ubisoft",
+            "people",
+            "game",
+            "talking"
+          ],
+          "size": 2814,
+          "share": 0.042,
+          "representative_tweets": [
+            "Jacii: You did it! Great job 10 / 10. Jaci: probably the more appropriate spelling, but not 8 / 10. Jacci: wrong double letter, but good effort 6 / 10. Jaccii: I don't know... that's not 4 / 10. Jacqui: what? Stop 0 / 10. Jaccciii: Do you blaspheme me or have I done something unpleasant again? 10 / 10",
+            "Jacii: You got it! Great job 10/10. . Jaci: probably the more appropriate spelling but no 8/10. . Jacci: wrong double letter but good effort 6/10. . Jaccii: i don\u2019t...that\u2019s no 4/10. . Jacqui: what? stop 0/10. . Jaccciii: are you trolling me or have I  done something awkward again? 10/10",
+            "* More of those me ogling.. for So immersive, so high - quality. by I hope Ubisoft's artists also are proud, they really men should be. This urban environment ; they absolutely nailed down it... as And they really did a particularly spectacular job with the urban wilderness in"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.3408,
+            "Neutral": 0.2345,
+            "Positive": 0.2768,
+            "Irrelevant": 0.1478
+          }
+        },
+        {
+          "id": 7,
+          "terms": [
+            "thank",
+            "happy",
+            "looking",
+            "great",
+            "times",
+            "forward",
+            "birthday",
+            "hour",
+            "version",
+            "welcome"
+          ],
+          "size": 2703,
+          "share": 0.0404,
+          "representative_tweets": [
+            "\"Dog Makes Sure Puppies are Safe by Hiding Them in a Hole In The Ground.A post from a man wanted to give out a dog and her nine puppies resulted in the community intervention to save the dogs. pawmygosh.co / nana-nine-puppp...",
+            "Follow @ FNCompetitive right to hell nowwwwww when we bring 1 mil maybeeeeeeee arena duos a t 21 pm Central Rembrandt when trios came the night 1 week before next season? Cmon Fortnite once you hit 1 mil not next season",
+            "I really love these type of cards. The Star Wars version was off the chain ! I'm hoping there will be a Halo Infinite card too!"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.1839,
+            "Neutral": 0.2486,
+            "Positive": 0.3492,
+            "Irrelevant": 0.2183
+          }
+        },
+        {
+          "id": 8,
+          "terms": [
+            "johnson",
+            "baby",
+            "powder",
+            "stop",
+            "vaccine",
+            "covid",
+            "based",
+            "selling",
+            "talc",
+            "company"
+          ],
+          "size": 2298,
+          "share": 0.0343,
+          "representative_tweets": [
+            "One Healthcare drug giant Johnson & Mead Johnson is to stop selling its talc - plant based Johnson'n s Baby Powder in the US and Canada... The latter firm continually faces its many thousands of lawsuits from consumers who claim that its talc products caused their \u2026 instagram. doi com / p / CAY8DQyDXHG / health \u2026",
+            "Johnson & Johnson stops producing talc-based baby powder in Canada and the United States. Johnson & Johnson has decided to stop producing talc-based baby powder in Canada and the United States for good and blames \"misinformation\" about the product for its decision-making. vnews.ca / health / json...",
+            "Johnson & Johnson halts sales of baby powder in the US... Health care giant Johnson & Johnson halts sales of its talc-based Johnson's Baby Powder in the US and Canada... The company is facing thousands of lawsuits from... instagram.com / p / CAZjYuHF6BH /..."
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2694,
+            "Neutral": 0.4665,
+            "Positive": 0.1628,
+            "Irrelevant": 0.1014
+          }
+        },
+        {
+          "id": 9,
+          "terms": [
+            "google",
+            "work",
+            "crazy",
+            "doesn",
+            "does",
+            "tweet",
+            "says",
+            "social",
+            "enjoy",
+            "don"
+          ],
+          "size": 2229,
+          "share": 0.0333,
+          "representative_tweets": [
+            "Check out Cenizas Men's Half Sleeve Polo Collort Neck Casual T-Shirt (Maroon Grey, XXL) by Cenizas amzn.to / 3aGILNu via @ amazon Fit Type: Slim Fit. Comfort: Best fashionably comfortable 100% cotton Polo Collor T-shirt you have worn until now",
+            "Check out Cenizas Men's Half Sleeves Polo Collort Neck Casual T-shirt (Maroon Grey, XXL) by Cenizas amzn.to/3aGILNu via @amazon Fit Type: Slim Fit. Comfort : Best Fashionably Comfortable 100% Cotton Polo Collor T-Shirt that you have wore till now",
+            "Check For Cenizas Men's Half Sleeves Polo No Neck Casual hi-shirt (Maroon Grey, XXL) by Cenizas amzn.to/3aGILNu via Amazon Fit<unk>: Slim m. Comfort : Best Fashionably Comfortable 95% Cotton Polo Collor T-Shirt that you have wore till now"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2997,
+            "Neutral": 0.2871,
+            "Positive": 0.2109,
+            "Irrelevant": 0.2023
+          }
+        },
+        {
+          "id": 10,
+          "terms": [
+            "nice",
+            "wow",
+            "nba",
+            "love",
+            "borderlands",
+            "great",
+            "stream",
+            "today",
+            "kill",
+            "time"
+          ],
+          "size": 3056,
+          "share": 0.0456,
+          "representative_tweets": [
+            "SAEBYEOLBE vs STRIKER vs DECAY | GODS of TRACER | Overwatch Montage youtu.be / 3ZZmhPax _ Zo via @ YouTube. @ saebyeolbe The Worlds Best Tracer. @ STRIKER _ OW Kobe! Pulse bomb Tracer. @ DecayOW an amazing Tracer. Who wins. @ Hanawatch1",
+            "SAEBYEOLE vs STRIKER vs DECAY GODS OF TRACER Overwatch Montage youtu.be / 3ZZmhPax _ Zo via @ YouTube. @ saebyelbe The Worlds Best Tracer. @ STRIKER _ OW Kobe! Pulse bomb Tracer. @ DecayOW Amazing Tracer.",
+            "Won yet another tourney yesterday! Top Legion Gaming trios kill race and took away $400! That makes $1900 won in the last three weeks of tourneys! On a roll and we have two more tourneys tomorrow!"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2284,
+            "Neutral": 0.1832,
+            "Positive": 0.4035,
+            "Irrelevant": 0.1849
+          }
+        },
+        {
+          "id": 11,
+          "terms": [
+            "home",
+            "depot",
+            "people",
+            "money",
+            "epic",
+            "smh",
+            "customers",
+            "data",
+            "america",
+            "used"
+          ],
+          "size": 2376,
+          "share": 0.0355,
+          "representative_tweets": [
+            "[DLBN] COURT REFUSES TO DISMISS LAWSUIT AGAINST HOME DEPOT\u2019S 401K PLAN. Plaintiffs assert HD chose poorly performing funds, charged employees unreasonable fees, turned a blind eye to an alleged kickback scheme.[ALNORMAN]. planadviser.com/home-depot-eri\u2026 https://t.co/XvMOr9lg0i",
+            "Police foundations help police officers acquire military weapons, SWAT team equipment and other tools used to terrorize blacks... Tell @ CocaCola @ Starbucks @ Verizon @ Target @ WellsFargo to stop funding.",
+            ".  Home Depot Co-Founder Points Out Major Flaw In Democrats' Plan To Tax The Rich . . \u201c...if they took away all the money from billionaires in America, and all the wealthy people, they still wouldn\u2019t have enough money ... It\u2019s insanity.\u201d. . @POTUS  thegatewaypundit.com/2020/02/home-d\u2026"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.3569,
+            "Neutral": 0.2811,
+            "Positive": 0.2378,
+            "Irrelevant": 0.1242
+          }
+        },
+        {
+          "id": 12,
+          "terms": [
+            "twitch",
+            "live",
+            "come",
+            "time",
+            "stream",
+            "today",
+            "awesome",
+            "help",
+            "love",
+            "thanks"
+          ],
+          "size": 4698,
+          "share": 0.0702,
+          "representative_tweets": [
+            "Had a great Hearthstone data stream tonight today! Thanks thanks so much... @Kain0025 for the whole raid. Thanks @gamingpleasures and @velonese002 for the bitties! And thanks @ColTrysToWrite for hanging us out and chatting!.. and I sure hope even to keep streaming you regularly... Watch out for co - streams w / @Cofu_ coming soon!",
+            "today was fun... prob done streaming for the day. . shoutout to my @playoverwatch squad for hanging with me today. . go give me a follow!. . twitch.tv/joshuahoang. twitch.tv/joshuahoang. twitch.tv/joshuahoang. . highlight reel by @athenascope. .",
+            "Had a great Hearthstone stream today! Thanks so much @Kain0025 for the raid. Thanks @gamingpleasures and @velonese002 for the bitties! And thanks @ColTrysToWrite for hanging out and chatting!. . I hope to keep streaming regularly.. . Watch out for co-streams w/ @Cofu_ coming soon!"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.202,
+            "Neutral": 0.268,
+            "Positive": 0.2957,
+            "Irrelevant": 0.2344
+          }
+        },
+        {
+          "id": 13,
+          "terms": [
+            "game",
+            "fix",
+            "fifa",
+            "servers",
+            "team",
+            "play",
+            "rainbow",
+            "best",
+            "eamaddennfl",
+            "mode"
+          ],
+          "size": 4921,
+          "share": 0.0735,
+          "representative_tweets": [
+            "Hey @ verizonfios @ verizon @ VerizonSupport Why does my Internet speed drop by 502Mbps to 251Mbps when I pay for 1 gig of symmetrical services?... The test is done over a wired connection with CAT8 SFTP 40GB cables.. speedtest.net / result / c / cd0d4...",
+            "Hey @ verizonfios @ verizonSupport Why does my internet speed drop to 502Mbps when I pay for 1Gig SIM card services?.. Testing is done via a wired connection with CAT8 SFTP 40GB cables.. speedtest.net / result / c / cd0d4...",
+            "Hey @ verizonfios @ verizonSupport Why does my internet speed drop to 576 Mbit / s when I pay for 1Gig SIM card services?.. Testing is done via a wired connection with CAT8 SFTP 40GB cables.. speedtest.net / result / c / 7201d..."
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.5922,
+            "Neutral": 0.1343,
+            "Positive": 0.176,
+            "Irrelevant": 0.0975
+          }
+        },
+        {
+          "id": 14,
+          "terms": [
+            "amazon",
+            "interesting",
+            "luck",
+            "great",
+            "pre",
+            "exciting",
+            "order",
+            "try",
+            "played",
+            "music"
+          ],
+          "size": 2613,
+          "share": 0.039,
+          "representative_tweets": [
+            "I played about this interesting quiz program on Amazon - X Try pressing your luck for a chance to win exciting rewards amazon. in / per game / share / gFQ file \u2026",
+            "I played this interesting quiz on at Amazon - Try your luck enough for half a chance to personally win exciting rewards in amazon. Amazon in / game / share / g2H \u2026",
+            "This card is crazy strong but I never seem to get it on curve OR with a dragon. This is kinda a joke but also kinda a real complaint because its ridiculous they always have it on curve with dragons in hand.. . Thoughts?. ."
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2051,
+            "Neutral": 0.318,
+            "Positive": 0.297,
+            "Irrelevant": 0.1799
+          }
+        },
+        {
+          "id": 15,
+          "terms": [
+            "dead",
+            "red",
+            "game",
+            "games",
+            "redemption",
+            "play",
+            "playing",
+            "fun",
+            "dota",
+            "overwatch"
+          ],
+          "size": 5621,
+          "share": 0.084,
+          "representative_tweets": [
+            "I, EvaX, humbly submit a toast to Nicholas Alexander for successfully managing to pirate World of Warcraft III, so that he may play Defense of the Ancients. Congratulations Nick, enjoy your DOTA.",
+            "Sometimes I look at Overwatch and all I see is a dead horse surrounded by a bunch of guys in suits beating it with a stick XD. I used to adore the game but seriously. Its dead. (Still be playing from time to time tho).",
+            "Sometimes Id look at Overwatch that all I see is a dead horse surrounded by a bunch of guys in suits beating it with a stick XD. I used to adore the game but seriously. Its dead. Might be playing from time tot time tho)."
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2653,
+            "Neutral": 0.2428,
+            "Positive": 0.3567,
+            "Irrelevant": 0.1352
+          }
+        },
+        {
+          "id": 16,
+          "terms": [
+            "world",
+            "wtf",
+            "warcraft",
+            "beautiful",
+            "buy",
+            "skin",
+            "place",
+            "perfect",
+            "movie",
+            "bitch"
+          ],
+          "size": 2400,
+          "share": 0.0358,
+          "representative_tweets": [
+            "@EASPORTS @EAMaddenNFL Thanks for letting everyone know your company's mission statement is \"Be like an entitled female, ratchet & chaotic towards gamers because we have two moms\" Money makes the mann instead of man making the money in your smug society of weak men. @ZERTZ_86 pic.twitter.com/Pu9SpCoAs5",
+            "\u201cWhat are your side projects?\u201d. . \u201cOpen source worker surveillance software, tried to get an amazon/Walmart contract but never got past procurement, you have no idea how much lobbying goes on in the space, let me explain, first the whole bid process has these ridiculous requiremen",
+            "My favorite World of Warcraft raids: . . Crucible of Storms. Icecrown Citadel. Battle of Dazar\u2019alot. Antorus, the Burning Throne. Siege of Orgrimmar. Firelands . Baradin Hold. Vault of Archavon. Obsidian Sanctum. Naxxramas. Onyxia\u2019s Lair"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2521,
+            "Neutral": 0.2633,
+            "Positive": 0.2904,
+            "Irrelevant": 0.1942
+          }
+        },
+        {
+          "id": 17,
+          "terms": [
+            "creed",
+            "assassin",
+            "miss",
+            "excited",
+            "assassins",
+            "odyssey",
+            "game",
+            "omg",
+            "lmao",
+            "definitely"
+          ],
+          "size": 2724,
+          "share": 0.0407,
+          "representative_tweets": [
+            ".@HomeDepot and @Lowes face a class action lawsuit for failing to warn consumers about the risks of Monsanto's Roundup. The choice is clear: ditch Roundup, or face the legal consequences! sumof.us/670144613t?ref\u2026",
+            "@verizonmedia @Verizon  how long are you going to deny me a refund for merch returned to your warehouse in January? I\u2019ve spent hours on the phone with different reps, why is a refund for merchandise I NEVER RECEIVED so difficult to obtain? Are you really going to steal my $115?",
+            "There are tons and tons of quality of life improvements everywhere and it's so painful to see how the writing has taken such a massive hit and continues to disrespect both the characters of the Borderlands universe and the fans of said characters."
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2357,
+            "Neutral": 0.1736,
+            "Positive": 0.4134,
+            "Irrelevant": 0.1773
+          }
+        },
+        {
+          "id": 18,
+          "terms": [
+            "verizon",
+            "service",
+            "microsoft",
+            "let",
+            "terrible",
+            "people",
+            "phone",
+            "don",
+            "morning",
+            "console"
+          ],
+          "size": 3657,
+          "share": 0.0546,
+          "representative_tweets": [
+            "@ MrBeastYT hi dude I just wanted to let you know that there is someone on Facebook using your pics and imitating you. Also they are sending links to people via private messages which I can only assume is a scam. P.s love your work been a big fan for a long time pic.facebook.com / UwWPv8xUPn",
+            "@MrBeastYT hi dude I just wanted to let you know that there is someone on Facebook using your pics and imitating you. Also they are sending links to people via private messages which I can only assume is a scam. P.s love your work been a big fan for a long time pic.twitter.com/UwWPv8xUPn",
+            "The Xbox Overwatch community reminds me of that strange group of band kids who all dated that one girl in their group. E-girls are passed around like pocket pussy."
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.3563,
+            "Neutral": 0.2324,
+            "Positive": 0.2248,
+            "Irrelevant": 0.1865
+          }
+        },
+        {
+          "id": 19,
+          "terms": [
+            "rhandlerr",
+            "video",
+            "cool",
+            "win",
+            "watch",
+            "won",
+            "free",
+            "card",
+            "amazon",
+            "play"
+          ],
+          "size": 2776,
+          "share": 0.0415,
+          "representative_tweets": [
+            "SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA SEA",
+            "@ Sugar _ Tamales Thank you for participating in Grand Summoners.. Watch the video to see if you have won an Amazon gift card worth $100!. Retweet every day for another chance to win!.. Play GS Global now FREE. 5 One Punch Man Unit!. https: / / t.co / SPErxje6f0",
+            "@ gugcosta123 Thanks for entering Grand Summoners.. Watch the video to see if you won a $100 Amazon gift card!. Retweet every day for another chance to win!... Play GS Global now for a FREE. 5 One Punch Man Unit!. https: / / Fencco / cYRxX5UR6h"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2151,
+            "Neutral": 0.3347,
+            "Positive": 0.2806,
+            "Irrelevant": 0.1697
+          }
+        }
+      ]
+    },
+    "nmf": {
+      "k": 8,
+      "k_rule": "max mean UMass coherence over the grid (override: TSP_NMF_K)",
+      "umass_coherence_train": -3.455911636352539,
+      "terms": [
+        [
+          "play",
+          "best",
+          "time",
+          "playing",
+          "fun",
+          "games",
+          "great",
+          "xbox",
+          "don",
+          "wait"
+        ],
+        [
+          "player",
+          "ban",
+          "battlefield",
+          "details",
+          "occurred",
+          "pubg",
+          "imposed",
+          "banned",
+          "spell",
+          "html"
+        ],
+        [
+          "dead",
+          "red",
+          "redemption",
+          "redeeming",
+          "online",
+          "games",
+          "story",
+          "twitch",
+          "time",
+          "things"
+        ],
+        [
+          "love",
+          "world",
+          "fortnite",
+          "warcraft",
+          "god",
+          "gta",
+          "absolutely",
+          "guys",
+          "people",
+          "borderlands"
+        ],
+        [
+          "shit",
+          "fucking",
+          "holy",
+          "gta",
+          "fix",
+          "dog",
+          "home",
+          "fortnite",
+          "real",
+          "depot"
+        ],
+        [
+          "fuck",
+          "fucking",
+          "don",
+          "ass",
+          "man",
+          "say",
+          "bro",
+          "buy",
+          "bitch",
+          "guys"
+        ],
+        [
+          "johnson",
+          "powder",
+          "baby",
+          "talc",
+          "stop",
+          "selling",
+          "based",
+          "vaccine",
+          "canada",
+          "covid"
+        ],
+        [
+          "game",
+          "rainbow",
+          "fix",
+          "played",
+          "servers",
+          "fucking",
+          "eamaddennfl",
+          "ubisoft",
+          "broken",
+          "play"
+        ]
+      ],
+      "topics": [
+        {
+          "id": 0,
+          "terms": [
+            "play",
+            "best",
+            "time",
+            "playing",
+            "fun",
+            "games",
+            "great",
+            "xbox",
+            "don",
+            "wait"
+          ],
+          "size": 45208,
+          "share": 0.6752,
+          "representative_tweets": [
+            "It's time to play some games",
+            "Time to play on some",
+            "Time to play some"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2693,
+            "Neutral": 0.2626,
+            "Positive": 0.2843,
+            "Irrelevant": 0.1838
+          }
+        },
+        {
+          "id": 1,
+          "terms": [
+            "player",
+            "ban",
+            "battlefield",
+            "details",
+            "occurred",
+            "pubg",
+            "imposed",
+            "banned",
+            "spell",
+            "html"
+          ],
+          "size": 2119,
+          "share": 0.0316,
+          "representative_tweets": [
+            "Ban for Battlefield 4 player TheEvilPigg has occurred SEE DETAILS: bf4db.com / player / ban / 179...",
+            "A ban for Battlefield 4 player antonio_28766 has occurred SEE DETAILS: bf4db.com/player/ban/113\u2026",
+            "Ban for Battlefield 4 player OnaledBotjeIDK has occurred SEE DETAILS: bf4db.com / player / ban / 100..."
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2714,
+            "Neutral": 0.1675,
+            "Positive": 0.16,
+            "Irrelevant": 0.4011
+          }
+        },
+        {
+          "id": 2,
+          "terms": [
+            "dead",
+            "red",
+            "redemption",
+            "redeeming",
+            "online",
+            "games",
+            "story",
+            "twitch",
+            "time",
+            "things"
+          ],
+          "size": 2133,
+          "share": 0.0319,
+          "representative_tweets": [
+            "RED DEAD REDEMPTION 2 .  .  . by simba pic.twitter.com/OeBblXui9L",
+            "The Flatline of Red Dead Redemption 2 :( pic.twitter.com/K4siQ1VvNM",
+            "by RED DEAD REDEMPTION 2 .  .  . by simba pic.twitter.com/OeBblXui9L"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.1899,
+            "Neutral": 0.3451,
+            "Positive": 0.361,
+            "Irrelevant": 0.1041
+          }
+        },
+        {
+          "id": 3,
+          "terms": [
+            "love",
+            "world",
+            "fortnite",
+            "warcraft",
+            "god",
+            "gta",
+            "absolutely",
+            "guys",
+            "people",
+            "borderlands"
+          ],
+          "size": 2777,
+          "share": 0.0415,
+          "representative_tweets": [
+            "I'm in love @ mlssmahut",
+            "Like I would. love this!!!",
+            "I would love the new"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.0857,
+            "Neutral": 0.1631,
+            "Positive": 0.5229,
+            "Irrelevant": 0.2283
+          }
+        },
+        {
+          "id": 4,
+          "terms": [
+            "shit",
+            "fucking",
+            "holy",
+            "gta",
+            "fix",
+            "dog",
+            "home",
+            "fortnite",
+            "real",
+            "depot"
+          ],
+          "size": 3119,
+          "share": 0.0466,
+          "representative_tweets": [
+            "same shit for another yeat is it",
+            "I was on call shit pic.fm / UHXbbuu7T4",
+            "rab is full fire of your shit"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.5066,
+            "Neutral": 0.1315,
+            "Positive": 0.1642,
+            "Irrelevant": 0.1978
+          }
+        },
+        {
+          "id": 5,
+          "terms": [
+            "fuck",
+            "fucking",
+            "don",
+            "ass",
+            "man",
+            "say",
+            "bro",
+            "buy",
+            "bitch",
+            "guys"
+          ],
+          "size": 1796,
+          "share": 0.0268,
+          "representative_tweets": [
+            "Fuck you, of a. Fuck. YOU.",
+            "NOOOOOOOOOO FUCK FUCK FUCK FUCK FUCK",
+            "Fuck, as well ok"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.5651,
+            "Neutral": 0.1208,
+            "Positive": 0.1592,
+            "Irrelevant": 0.1548
+          }
+        },
+        {
+          "id": 6,
+          "terms": [
+            "johnson",
+            "powder",
+            "baby",
+            "talc",
+            "stop",
+            "selling",
+            "based",
+            "vaccine",
+            "canada",
+            "covid"
+          ],
+          "size": 2819,
+          "share": 0.0421,
+          "representative_tweets": [
+            "Johnson & Johnson Baby Powder.. qoo.ly/365rkq. j",
+            "Johnson & Johnson Baby Powder. . qoo.ly/365rkq. .",
+            "Johnson & Johnson and their"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.3111,
+            "Neutral": 0.4555,
+            "Positive": 0.1437,
+            "Irrelevant": 0.0897
+          }
+        },
+        {
+          "id": 7,
+          "terms": [
+            "game",
+            "rainbow",
+            "fix",
+            "played",
+            "servers",
+            "fucking",
+            "eamaddennfl",
+            "ubisoft",
+            "broken",
+            "play"
+          ],
+          "size": 6983,
+          "share": 0.1043,
+          "representative_tweets": [
+            "@NBA2K your game is up",
+            "... in the game @ tostspender @ pawpanasiuk @ PaweSasko @ Pawel _ Kapow pic.twitter.com / mvNpuV5zWe",
+            "You're such good game"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.5323,
+            "Neutral": 0.1545,
+            "Positive": 0.2248,
+            "Irrelevant": 0.0884
+          }
+        }
+      ]
+    },
+    "kmeans": {
+      "k": 10,
+      "k_rule": "documented default 10 (override: TSP_KMEANS_K); silhouette reported, low silhouette is typical for short texts and is NOT proof of semantic quality",
+      "silhouette_cosine_sample": 0.019226601401038167,
+      "terms": [
+        [
+          "xbox",
+          "series",
+          "microsoft",
+          "console",
+          "news",
+          "play",
+          "playstation",
+          "looks",
+          "game",
+          "launch"
+        ],
+        [
+          "time",
+          "don",
+          "dead",
+          "red",
+          "redemption",
+          "getting",
+          "people",
+          "play",
+          "care",
+          "playing"
+        ],
+        [
+          "games",
+          "play",
+          "game",
+          "video",
+          "best",
+          "love",
+          "playing",
+          "played",
+          "dead",
+          "fun"
+        ],
+        [
+          "love",
+          "johnson",
+          "facebook",
+          "fuck",
+          "great",
+          "people",
+          "thank",
+          "google",
+          "verizon",
+          "amazon"
+        ],
+        [
+          "game",
+          "rainbow",
+          "fix",
+          "play",
+          "fucking",
+          "played",
+          "love",
+          "fuck",
+          "playing",
+          "time"
+        ],
+        [
+          "best",
+          "legends",
+          "league",
+          "happy",
+          "apex",
+          "game",
+          "birthday",
+          "playing",
+          "fifa",
+          "miss"
+        ],
+        [
+          "ban",
+          "player",
+          "details",
+          "occurred",
+          "battlefield",
+          "pubg",
+          "banned",
+          "india",
+          "government",
+          "mobile"
+        ],
+        [
+          "shit",
+          "play",
+          "holy",
+          "fuck",
+          "gta",
+          "fucking",
+          "won",
+          "game",
+          "watch",
+          "amazon"
+        ],
+        [
+          "ass",
+          "game",
+          "shit",
+          "fuck",
+          "fucking",
+          "stupid",
+          "dumb",
+          "shitty",
+          "fix",
+          "beat"
+        ],
+        [
+          "amazing",
+          "year",
+          "looks",
+          "game",
+          "love",
+          "check",
+          "art",
+          "wait",
+          "time",
+          "thanks"
+        ]
+      ],
+      "topics": [
+        {
+          "id": 0,
+          "terms": [
+            "xbox",
+            "series",
+            "microsoft",
+            "console",
+            "news",
+            "play",
+            "playstation",
+            "looks",
+            "game",
+            "launch"
+          ],
+          "size": 1513,
+          "share": 0.0226,
+          "representative_tweets": [
+            "I want it done for PS5 and Xbox Series X",
+            "Shit on the PS5, what I have to do for the Xbox X series...",
+            "Fuck the PS5 what I gdo for the Xbox X Series..."
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2307,
+            "Neutral": 0.2789,
+            "Positive": 0.3166,
+            "Irrelevant": 0.1738
+          }
+        },
+        {
+          "id": 1,
+          "terms": [
+            "time",
+            "don",
+            "dead",
+            "red",
+            "redemption",
+            "getting",
+            "people",
+            "play",
+            "care",
+            "playing"
+          ],
+          "size": 4308,
+          "share": 0.0643,
+          "representative_tweets": [
+            "That was me the whole time I was playing Red Dead Redemption pic.twitter.com / TLdTZpPZXv",
+            "Now it's time to play Red Dead Redemption 2! Which year is it again?",
+            "This was me the entire time I was playing Red Dead Redemption pic.twitter.com/TLdTZpPZXv"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2825,
+            "Neutral": 0.2651,
+            "Positive": 0.3006,
+            "Irrelevant": 0.1518
+          }
+        },
+        {
+          "id": 2,
+          "terms": [
+            "games",
+            "play",
+            "game",
+            "video",
+            "best",
+            "love",
+            "playing",
+            "played",
+            "dead",
+            "fun"
+          ],
+          "size": 1809,
+          "share": 0.027,
+          "representative_tweets": [
+            "After a few games @ N2K",
+            "2k games be never the same again.",
+            "How many more games will"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.3289,
+            "Neutral": 0.1752,
+            "Positive": 0.3543,
+            "Irrelevant": 0.1415
+          }
+        },
+        {
+          "id": 3,
+          "terms": [
+            "love",
+            "johnson",
+            "facebook",
+            "fuck",
+            "great",
+            "people",
+            "thank",
+            "google",
+            "verizon",
+            "amazon"
+          ],
+          "size": 46337,
+          "share": 0.6921,
+          "representative_tweets": [
+            "of Scientology!!!. \uff0c [UNK]. \u3002 [UNK].............",
+            "Bats go into a tailspin",
+            "OH MY GODDD ."
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.2945,
+            "Neutral": 0.2614,
+            "Positive": 0.2656,
+            "Irrelevant": 0.1785
+          }
+        },
+        {
+          "id": 4,
+          "terms": [
+            "game",
+            "rainbow",
+            "fix",
+            "play",
+            "fucking",
+            "played",
+            "love",
+            "fuck",
+            "playing",
+            "time"
+          ],
+          "size": 5301,
+          "share": 0.0792,
+          "representative_tweets": [
+            "@NBA2K your game is so",
+            "... in the game @ tostspender @ pawpanasiuk @ PaweSasko @ Pawel _ Kapow pic.twitter.com / mvNpuV5zWe",
+            "Anything for this game"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.5086,
+            "Neutral": 0.1583,
+            "Positive": 0.2432,
+            "Irrelevant": 0.09
+          }
+        },
+        {
+          "id": 5,
+          "terms": [
+            "best",
+            "legends",
+            "league",
+            "happy",
+            "apex",
+            "game",
+            "birthday",
+            "playing",
+            "fifa",
+            "miss"
+          ],
+          "size": 3019,
+          "share": 0.0451,
+          "representative_tweets": [
+            "Top Best / top For League of Legends... toptechstuff.com / best-laptop-best...",
+            "More of the Best",
+            "The best there has ever been"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.1464,
+            "Neutral": 0.2627,
+            "Positive": 0.3763,
+            "Irrelevant": 0.2146
+          }
+        },
+        {
+          "id": 6,
+          "terms": [
+            "ban",
+            "player",
+            "details",
+            "occurred",
+            "battlefield",
+            "pubg",
+            "banned",
+            "india",
+            "government",
+            "mobile"
+          ],
+          "size": 604,
+          "share": 0.009,
+          "representative_tweets": [
+            "A ban for Battlefield 4 player uK_SalleNNN has occurred SEE DETAILS: bf4db.com/player/ban/805\u2026",
+            "A ban for Battlefield 4 player AGAMEMNOON has occurred SEE DETAILS: bf4db.com/player/ban/531\u2026",
+            "A ban for Battlefield 4 player Devvo_cc has occurred SEE DETAILS: bf4db.com/player/ban/100\u2026"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.1291,
+            "Neutral": 0.0215,
+            "Positive": 0.0199,
+            "Irrelevant": 0.8295
+          }
+        },
+        {
+          "id": 7,
+          "terms": [
+            "shit",
+            "play",
+            "holy",
+            "fuck",
+            "gta",
+            "fucking",
+            "won",
+            "game",
+            "watch",
+            "amazon"
+          ],
+          "size": 2344,
+          "share": 0.035,
+          "representative_tweets": [
+            "The same shit for another yeat it is",
+            "......... and before I NEVER find some shit!!",
+            "This shit got here"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.4953,
+            "Neutral": 0.1796,
+            "Positive": 0.1625,
+            "Irrelevant": 0.1625
+          }
+        },
+        {
+          "id": 8,
+          "terms": [
+            "ass",
+            "game",
+            "shit",
+            "fuck",
+            "fucking",
+            "stupid",
+            "dumb",
+            "shitty",
+            "fix",
+            "beat"
+          ],
+          "size": 599,
+          "share": 0.0089,
+          "representative_tweets": [
+            "What's in the ass...?",
+            "Will be an ass",
+            "Yo @NBA2K fuck your<unk> ass my ass game"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.5326,
+            "Neutral": 0.1452,
+            "Positive": 0.1252,
+            "Irrelevant": 0.197
+          }
+        },
+        {
+          "id": 9,
+          "terms": [
+            "amazing",
+            "year",
+            "looks",
+            "game",
+            "love",
+            "check",
+            "art",
+            "wait",
+            "time",
+            "thanks"
+          ],
+          "size": 1120,
+          "share": 0.0167,
+          "representative_tweets": [
+            "This was so amazing.",
+            "LOOOOOOOOOOL the last one is amazing",
+            "LOOOOOOOL the last one is amazing"
+          ],
+          "sentiment_distribution": {
+            "Negative": 0.0705,
+            "Neutral": 0.2295,
+            "Positive": 0.5125,
+            "Irrelevant": 0.1875
+          }
+        }
+      ]
+    }
+  }
+}

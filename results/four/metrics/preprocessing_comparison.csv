@@ -1,0 +1,6 @@
+preprocessing,val_accuracy,val_macro_f1,n_features,seconds
+"light (no contraction/repeat handling, keep #/@)",0.9334950475035375,0.932188226671431,155256,38.2
+default (negation-preserving),0.9262179098443502,0.9244661212515801,150896,47.9
+default + stopword removal,0.9226804123711341,0.9212666851489507,120336,44.2
+default + stemming,0.9238932686476653,0.9221649971921234,141099,56.5
+default + POS-aware lemmatisation,0.9247018394986861,0.9228048124855138,138533,85.5
